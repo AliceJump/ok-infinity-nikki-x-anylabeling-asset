@@ -1,82 +1,75 @@
 {
   "images": [
     {
-      "id": 0,
-      "file_name": "0.png",
-      "width": 1920,
-      "height": 1280
+      "id": 2,
+      "file_name": "screenshot_20261026_184825.png",
+      "width": 3392,
+      "height": 2400
     },
     {
-      "id": 1,
-      "file_name": "1.png",
-      "width": 1920,
-      "height": 1280
+      "id": 3,
+      "file_name": "screenshot_20261026_184802.png",
+      "width": 3392,
+      "height": 2400
+    },
+    {
+      "id": 4,
+      "file_name": "screenshot_20261026_200542.png",
+      "width": 3392,
+      "height": 2400
     }
   ],
   "annotations": [
     {
-      "id": 0,
-      "image_id": 0,
-      "category_id": 4,
-      "bbox": [
-        1686,
-        1208,
-        18,
-        21
-      ],
-      "area": 378,
-      "iscrowd": 0
-    },
-    {
-      "id": 1,
-      "image_id": 0,
+      "id": 9,
+      "image_id": 2,
       "category_id": 1,
       "bbox": [
-        56,
-        33,
-        35,
-        43
+        87,
+        61,
+        53,
+        29
       ],
-      "area": 1505,
+      "area": 1537,
       "iscrowd": 0
     },
     {
-      "id": 4,
-      "image_id": 0,
-      "category_id": 2,
+      "id": 11,
+      "image_id": 2,
+      "category_id": 6,
       "bbox": [
-        883,
-        772,
-        20,
-        19
+        2285,
+        1468,
+        59,
+        36
       ],
-      "area": 380,
+      "area": 2124,
       "iscrowd": 0
     },
     {
-      "id": 6,
-      "image_id": 1,
+      "id": 17,
+      "image_id": 4,
+      "category_id": 8,
+      "bbox": [
+        2785,
+        2308,
+        32,
+        39
+      ],
+      "area": 1248,
+      "iscrowd": 0
+    },
+    {
+      "id": 10,
+      "image_id": 2,
       "category_id": 3,
       "bbox": [
-        1657,
-        1209,
-        47,
-        20
+        2707,
+        2273,
+        85,
+        38
       ],
-      "area": 940,
-      "iscrowd": 0
-    },
-    {
-      "id": 8,
-      "image_id": 0,
-      "category_id": 5,
-      "bbox": [
-        1289,
-        418,
-        11,
-        15
-      ],
-      "area": 165,
+      "area": 3230,
       "iscrowd": 0
     }
   ],
@@ -87,23 +80,18 @@
       "supercategory": ""
     },
     {
-      "id": 2,
-      "name": "skip_b",
+      "id": 6,
+      "name": "chat_icon",
+      "supercategory": ""
+    },
+    {
+      "id": 8,
+      "name": "skip_f",
       "supercategory": ""
     },
     {
       "id": 3,
       "name": "skip_choose",
-      "supercategory": ""
-    },
-    {
-      "id": 4,
-      "name": "skip_f",
-      "supercategory": ""
-    },
-    {
-      "id": 5,
-      "name": "task_icon",
       "supercategory": ""
     }
   ]

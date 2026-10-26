@@ -28,8 +28,10 @@ jobs:
           data=json.loads(pathlib.Path("coco_annotations.json").read_text(encoding="utf-8"))
           images={i["id"]:i for i in data["images"]}
           cats={i["id"]:i["name"] for i in data["categories"]}
-          assert {"dialog_icon","skip_b","skip_choose","skip_f","task_icon"}.issubset(set(cats.values()))
-          assert len(data["annotations"])>=5
+          assert {"dialog_icon","skip_choose","skip_f","chat_icon"} == set(cats.values())
+          assert len(data["annotations"]) == 4
+          for key in ("images", "annotations", "categories"):
+              assert len({item['id'] for item in data[key]}) == len(data[key]), key
           for image in images.values():
               file=pathlib.Path(image["file_name"])
               assert file.is_file(), file

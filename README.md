@@ -1,14 +1,15 @@
-# Infinity Nikki · ok-script-toolkit templates
+# Infinity Nikki · Toolkit template sources
 
-This repository is the source of editable [ok-script Toolkit](https://github.com/AliceJump/ok-script-toolkit) Template / Rect / Point annotations. In the application repository it is mounted as the `ok_templates/` Git submodule.
+The application mounts this repository as the `ok_templates` submodule. Edit Template annotations in `coco_annotations.json`, Rect annotations in `boxes.json`, and Point annotations in `points.json` using ok-script Toolkit.
 
-## Current working format
+The four active template names are `dialog_icon`, `skip_choose` (the W/S choice-screen marker), `chat_icon`, and `skip_f`. Their boxes follow the user's local Toolkit annotations. `skip_b` and the task-item marker have been removed along with the unreferenced original 0.png and 1.png atlases.
 
-- `0.png`, `1.png` — initial images copied byte-for-byte from Nikki's current runtime atlas.
-- `coco_annotations.json` — editable Template annotations, 5 existing feature names preserved.
-- `boxes.json` — editable Rect annotations.
-- `points.json` — editable Point annotations.
+- `screenshot_20261026_184825.png`: source of the dialogue marker, W/S hint and chat-option icon.
+- `screenshot_20261026_184802.png`: another background used to verify matching and text-band measurement.
+- `screenshot_20261026_200542.png`: source of the user's new F template, also used to verify that task-item popups receive no automatic input.
 
-The initial pictures are packed/sparse **runtime images**, not full original screenshots. For new authoring work, take fresh screenshots in Toolkit and annotate them using its integrated editor. Publishing templates writes `assets/coco_annotations.json` and `assets/images/` in the **application** repository; saving work files alone does not change application behavior. After editing or publishing, review the generated resources and app tests separately.
+The parent app requires dialogue and W/S markers before counting chat icons. It measures the text band to the right of each chat icon and remembers selection progress independently for each option-count/text-length fingerprint. Task-item popups and B-key fallback handling are disabled.
 
-The historical X-AnyLabeling source PNG/JSON data is preserved in the existing Git history at commit `592f0adf22abf7509ea88670a6a51b00d7f17a92`. It is not the current working format, and no X-AnyLabeling conversion tool is required.
+Publishing writes the parent app's `assets/coco_annotations.json`, sparse `assets/images` atlas files and `src/data/FeatureList.py`. Saving source annotations alone does not publish runtime changes. Each template category must have exactly one annotation.
+
+The historical X-AnyLabeling files remain available in Git history at `592f0adf22abf7509ea88670a6a51b00d7f17a92`.
