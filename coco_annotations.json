@@ -90,6 +90,19 @@
       ],
       "area": 3230,
       "iscrowd": 0
+    },
+    {
+      "id": 11,
+      "image_id": 2,
+      "category_id": 6,
+      "bbox": [
+        2285,
+        1468,
+        59,
+        36
+      ],
+      "area": 2124,
+      "iscrowd": 0
     }
   ],
   "categories": [
@@ -116,6 +129,11 @@
     {
       "id": 5,
       "name": "task_icon",
+      "supercategory": ""
+    },
+    {
+      "id": 6,
+      "name": "chat_icon",
       "supercategory": ""
     }
   ]

@@ -5,13 +5,13 @@ This repository is the source of editable [ok-script Toolkit](https://github.com
 ## Current working format
 
 - `0.png`, `1.png` — initial images copied byte-for-byte from Nikki's current runtime atlas.
-- `coco_annotations.json` — editable Template annotations, 5 existing feature names preserved.
-- `screenshot_20261026_184825.png` — 3392×2400 choice scene used for `dialog_icon` and `skip_choose`.
+- `coco_annotations.json` — editable Template annotations; the 5 original feature names plus `chat_icon`.
+- `screenshot_20261026_184825.png` — 3392×2400 choice scene used for the locally authored `dialog_icon`, `skip_choose`, and `chat_icon`.
 - `screenshot_20261026_184802.png` — another background for replay validation, intentionally without duplicate template annotations.
 - `boxes.json` — editable Rect annotations.
 - `points.json` — editable Point annotations.
 
-The initial pictures are packed/sparse **runtime images**, not full original screenshots. The new screenshots replace the history icon and W/S choice hint with native-resolution annotations. `skip_f` still represents the ordinary dialogue continuation prompt; the F beside the choice list is a different location and must not replace it, or the ordinary-skip branch would bypass choice scrolling. `skip_b` and `task_icon` retain their verified original crops because neither appears in the two new choice scenes. `1.png` remains as an original authoring reference.
+The initial pictures are packed/sparse **runtime images**, not full original screenshots. The screenshot annotations follow the local Toolkit edits, including the tightly cropped history marker and W/S hint. `chat_icon` marks the speech bubble beside a dialogue option, so the app can count chat options without including the exit option. `skip_f`, `skip_b`, and `task_icon` retain their original crops. `1.png` remains as an original authoring reference.
 
 Publishing templates writes `assets/coco_annotations.json` and `assets/images/` in the **application** repository; saving work files alone does not change application behavior. After editing or publishing, review the generated resources and app tests separately. Do not add a second annotation of the same category on the validation image: the runtime requires one box per template category.
 
