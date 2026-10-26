@@ -1,0 +1,110 @@
+{
+  "images": [
+    {
+      "id": 0,
+      "file_name": "0.png",
+      "width": 1920,
+      "height": 1280
+    },
+    {
+      "id": 1,
+      "file_name": "1.png",
+      "width": 1920,
+      "height": 1280
+    }
+  ],
+  "annotations": [
+    {
+      "id": 0,
+      "image_id": 0,
+      "category_id": 4,
+      "bbox": [
+        1686,
+        1208,
+        18,
+        21
+      ],
+      "area": 378,
+      "iscrowd": 0
+    },
+    {
+      "id": 1,
+      "image_id": 0,
+      "category_id": 1,
+      "bbox": [
+        56,
+        33,
+        35,
+        43
+      ],
+      "area": 1505,
+      "iscrowd": 0
+    },
+    {
+      "id": 4,
+      "image_id": 0,
+      "category_id": 2,
+      "bbox": [
+        883,
+        772,
+        20,
+        19
+      ],
+      "area": 380,
+      "iscrowd": 0
+    },
+    {
+      "id": 6,
+      "image_id": 1,
+      "category_id": 3,
+      "bbox": [
+        1657,
+        1209,
+        47,
+        20
+      ],
+      "area": 940,
+      "iscrowd": 0
+    },
+    {
+      "id": 8,
+      "image_id": 0,
+      "category_id": 5,
+      "bbox": [
+        1289,
+        418,
+        11,
+        15
+      ],
+      "area": 165,
+      "iscrowd": 0
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "dialog_icon",
+      "supercategory": ""
+    },
+    {
+      "id": 2,
+      "name": "skip_b",
+      "supercategory": ""
+    },
+    {
+      "id": 3,
+      "name": "skip_choose",
+      "supercategory": ""
+    },
+    {
+      "id": 4,
+      "name": "skip_f",
+      "supercategory": ""
+    },
+    {
+      "id": 5,
+      "name": "task_icon",
+      "supercategory": ""
+    }
+  ]
+}
