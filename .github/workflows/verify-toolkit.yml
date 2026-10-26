@@ -1,0 +1,43 @@
+name: Verify Toolkit authoring sources
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Validate Toolkit COCO files and source images
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, struct
+          for name in ("coco_annotations.json","boxes.json","points.json"):
+              data=json.loads(pathlib.Path(name).read_text(encoding="utf-8"))
+              assert all(isinstance(data[key],list) for key in ("images","annotations","categories"))
+          data=json.loads(pathlib.Path("coco_annotations.json").read_text(encoding="utf-8"))
+          images={i["id"]:i for i in data["images"]}
+          cats={i["id"]:i["name"] for i in data["categories"]}
+          assert set(cats.values())=={"dialog_icon","skip_b","skip_choose","skip_f","task_icon"}
+          assert len(data["annotations"])==5
+          for image in images.values():
+              file=pathlib.Path(image["file_name"])
+              assert file.is_file(), file
+              raw=file.read_bytes()
+              assert raw[:8]==bytes.fromhex("89504e470d0a1a0a")
+              assert struct.unpack(">II",raw[16:24])==(image["width"],image["height"])
+          for ann in data["annotations"]:
+              assert ann["image_id"] in images
+              assert ann["category_id"] in cats
+              x,y,w,h=ann["bbox"]
+              img=images[ann["image_id"]]
+              assert x>=0 and y>=0 and w>0 and h>0
+              assert x+w<=img["width"] and y+h<=img["height"]
+          PY
