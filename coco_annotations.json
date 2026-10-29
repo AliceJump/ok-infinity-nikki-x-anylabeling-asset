@@ -29,6 +29,12 @@
       "file_name": "screenshot_20261030_001845.png",
       "width": 1920,
       "height": 1080
+    },
+    {
+      "id": 7,
+      "file_name": "screenshot_20261030_022013.png",
+      "width": 1920,
+      "height": 1080
     }
   ],
   "annotations": [
@@ -83,6 +89,19 @@
       ],
       "area": 816,
       "iscrowd": 0
+    },
+    {
+      "id": 16,
+      "image_id": 7,
+      "category_id": 9,
+      "bbox": [
+        1818,
+        37,
+        31,
+        38
+      ],
+      "area": 1178,
+      "iscrowd": 0
     }
   ],
   "categories": [
@@ -104,6 +123,11 @@
     {
       "id": 3,
       "name": "skip_choose",
+      "supercategory": ""
+    },
+    {
+      "id": 9,
+      "name": "Y_N_left",
       "supercategory": ""
     }
   ]
