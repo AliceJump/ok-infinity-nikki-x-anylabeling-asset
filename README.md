@@ -14,4 +14,6 @@ The parent app requires dialogue and W/S markers before counting chat icons. It 
 
 Publishing writes the parent app's `assets/coco_annotations.json`, sparse `assets/images` atlas files and `src/data/FeatureList.py`. Saving source annotations alone does not publish runtime changes. Each template category must have exactly one annotation.
 
+This repository stores authoring data and has no template-validation or screenshot-test CI. Application behavior tests belong in the parent project; do not add fixed category/count or source/runtime pixel-equality checks here.
+
 The historical X-AnyLabeling files remain available in Git history at `592f0adf22abf7509ea88670a6a51b00d7f17a92`.
