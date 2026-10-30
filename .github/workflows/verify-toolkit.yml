@@ -29,7 +29,10 @@ jobs:
           images={i["id"]:i for i in data["images"]}
           cats={i["id"]:i["name"] for i in data["categories"]}
           assert {"dialog_icon","skip_choose","skip_f","chat_icon","Y_N_left"} == set(cats.values())
-          assert len(data["annotations"]) == 5
+          assert len(data["annotations"]) == len(cats)
+          from collections import Counter
+          occurrences = Counter(ann["category_id"] for ann in data["annotations"])
+          assert all(occurrences[category_id] == 1 for category_id in cats)
           for key in ("images", "annotations", "categories"):
               assert len({item['id'] for item in data[key]}) == len(data[key]), key
           for image in images.values():
